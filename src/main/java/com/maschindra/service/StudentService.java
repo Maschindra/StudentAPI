@@ -3,6 +3,7 @@ package com.maschindra.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.maschindra.entity.Student;
@@ -31,6 +32,11 @@ public class StudentService {
 	{
 		return dao.getAllStudentEntities();
 	}
+	public Page<Student> getAllStudentEntitiesInPaging()
+	{
+		return dao.structureFindAll();
+	}
+	
 	
 	public Student getStudentEntity(int id)
 	{
